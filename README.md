@@ -1,16 +1,21 @@
 # TRIVEX EDIT — V5
 
-Mobile-first cinematic video editor portfolio. Static HTML/CSS/JS; no build step required.
+Premium responsive video-editor portfolio.
 
-## Files
-- `index.html`
-- `style.css`
-- `script.js`
+## V5 upgrades
+- Stronger hero section with availability badge
+- Refined premium black/red visual system
+- Improved project cards and hover interactions
+- Skills strip and expanded stats
+- Back-to-top button
+- Better mobile navigation accessibility
+- Smooth scroll, reveal animations and active navigation
+- YouTube preview modal
+- Existing V4 project links retained
+- GitHub Pages compatible; no build tools required
 
-## Deploy on GitHub Pages
-Upload the contents of this folder to the root of your repository (make sure `index.html` is at the top level), then enable GitHub Pages from Settings → Pages → Deploy from a branch → `main` → `/(root)`.
+## Deploy
+Upload the contents of this folder so `index.html` is at the repository/site root.
 
-## Notes
-- Email CTA: shaurya121518@gmail.com
-- Featured work uses the three YouTube Shorts supplied for the portfolio.
-- Replace the generic YouTube social URL in `index.html` with your exact channel URL when ready.
+## Before publishing
+Replace placeholder YouTube/Instagram/WhatsApp links with your exact profiles if needed.
