@@ -45,3 +45,18 @@ if(brief){brief.addEventListener('submit',e=>{
   const body=encodeURIComponent(`Hi TRIVEX EDIT,\n\nName: ${name}\nProject: ${project}\nPlatform: ${platform || 'Not specified'}\n\nProject details:\n${goal}`);
   window.location.href=`mailto:shaurya121518@gmail.com?subject=${subject}&body=${body}`;
 });}
+
+// V8 premium interactions
+addEventListener('load',()=>setTimeout(()=>$('.preloader')?.classList.add('done'),650));
+const fine=matchMedia('(pointer:fine)').matches;
+if(fine){
+  const magneticEls=$$('.magnetic');
+  magneticEls.forEach(el=>{
+    el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();const x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;el.style.transform=`translate(${x*.12}px,${y*.12}px)`});
+    el.addEventListener('mouseleave',()=>el.style.transform='');
+  });
+}
+// Active section highlight and smoother mobile menu state
+$$('nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
+// Subtle 3D tilt on the timeline card
+if(fine){const card=$('.timeline-card');card?.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();const rx=((e.clientY-r.top)/r.height-.5)*-4,ry=((e.clientX-r.left)/r.width-.5)*4;card.style.transform=`perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`});card?.addEventListener('mouseleave',()=>card.style.transform='')}

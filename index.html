@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="preloader" aria-hidden="true"><div class="loader-mark">TRIVEX<span>EDIT</span></div><div class="loader-line"><i></i></div><small>LOADING EXPERIENCE <b>08</b></small></div>
   <div class="scroll-progress"></div>
   <div class="cursor-glow"></div>
   <div class="noise"></div>
@@ -22,7 +23,7 @@
     <nav aria-label="Primary navigation">
       <a href="#home">HOME</a><a href="#services">SERVICES</a><a href="#work">WORK</a><a href="#process">PROCESS</a><a href="#contact">CONTACT</a>
     </nav>
-    <a class="nav-cta" href="#contact">GET A QUOTE <span>↗</span></a>
+    <a class="nav-cta magnetic" href="#contact">GET A QUOTE <span>↗</span></a>
     <button class="menu" aria-label="Open menu" aria-expanded="false">☰</button>
   </header>
 
@@ -64,12 +65,23 @@
         </div>
       </div>
       <div class="hero-scroll">SCROLL <span>↓</span></div>
+      <div class="hero-stamp"><span>TRIVEX</span><b>08</b><small>CREATIVE<br>EDITING STUDIO</small></div>
       <div class="hero-marquee"><span>EDIT WITH PURPOSE</span><span>EDIT WITH PURPOSE</span><span>EDIT WITH PURPOSE</span></div>
     </section>
 
     <section class="stats-strip"><div><b>01</b><strong>HOOK</strong><span>First seconds matter.</span></div><div><b>02</b><strong>PACE</strong><span>Keep every beat moving.</span></div><div><b>03</b><strong>STYLE</strong><span>Make the edit recognizable.</span></div><div><b>04</b><strong>DELIVERY</strong><span>Ready for your platform.</span></div></section>
 
-    <section class="trust-strip">
+    <section class="trust-strip reveal"><span>EDITING FOR</span><b>CREATORS</b><b>YOUTUBE</b><b>SHORTS</b><b>REELS</b><b>GAMING</b><b>ANIME</b><b>BRANDS</b></section>
+
+    <section class="manifesto"><div class="manifesto-track"><span>MAKE THEM STOP.</span><i>×</i><span>MAKE THEM WATCH.</span><i>×</i><span>MAKE THEM REMEMBER.</span><i>×</i></div></section>
+
+    <section class="section snapshot">
+      <div class="section-head reveal"><span>01 / THE V8 DIFFERENCE</span><h2>DESIGNED TO <em>MOVE.</em></h2></div>
+      <div class="snapshot-grid">
+        <div class="snapshot-copy reveal"><div class="giant-word">CUT<br><em>SMART.</em></div><p>V8 turns the portfolio into a mini sales experience: clear positioning, visual proof, frictionless contact and a process clients can understand in seconds.</p><a class="text-link magnetic" href="#contact">BOOK A PROJECT <b>↗</b></a></div>
+        <div class="timeline-card reveal"><div class="timeline-head"><span>EDIT TIMELINE / V8</span><b>01:24:08</b></div><div class="timeline-screen"><span class="scan"></span><div class="timeline-title">HOOK <em>→</em> BUILD <em>→</em> PAYOFF</div><div class="timeline-bars"><i></i><i></i><i></i><i></i><i></i></div></div><div class="timeline-footer"><span>STORY</span><span>SFX</span><span>COLOR</span><span>EXPORT</span></div></div>
+      </div>
+    </section>
       <span>BUILT FOR</span><b>CREATORS</b><b>YOUTUBE</b><b>SHORTS</b><b>REELS</b><b>GAMING</b><b>BRANDS</b>
     </section>
 
@@ -119,6 +131,16 @@
       </div>
     </section>
 
+    <section class="section packages">
+      <div class="section-head reveal"><span>04 / SIMPLE PACKAGES</span><h2>PICK A <em>STARTING POINT.</em></h2></div>
+      <div class="package-grid">
+        <article class="package reveal"><span class="package-tag">QUICK CONTENT</span><h3>SHORT-FORM</h3><p>For Reels, Shorts and TikTok-style edits that need pace and punch.</p><ul><li>Hook-focused cut</li><li>Captions & motion</li><li>Music / SFX sync</li></ul><a href="#contact">START WITH THIS ↗</a></article>
+        <article class="package featured reveal"><span class="package-tag">MOST VERSATILE</span><h3>CREATOR</h3><p>For creators building a consistent YouTube or social content style.</p><ul><li>Story-driven editing</li><li>Motion & sound design</li><li>Polished platform export</li></ul><a href="#contact">START WITH THIS ↗</a></article>
+        <article class="package reveal"><span class="package-tag">CUSTOM</span><h3>BRAND / CAMPAIGN</h3><p>For promos, ads and projects that need a custom visual direction.</p><ul><li>Creative direction</li><li>Custom pacing & graphics</li><li>Revision-ready workflow</li></ul><a href="#contact">START WITH THIS ↗</a></article>
+      </div>
+      <p class="package-note reveal">Need something different? <a href="#contact">Tell me what you're building.</a></p>
+    </section>
+
     <section id="process" class="section process">
       <div class="section-head reveal"><span>04 / PROCESS</span><h2>ZERO <em>CONFUSION.</em></h2></div>
       <div class="process-grid">
@@ -130,7 +152,7 @@
     </section>
 
     <section class="brief section">
-      <div class="section-head reveal"><span>05 / QUICK BRIEF</span><h2>MAKE THE <em>FIRST MOVE.</em></h2></div>
+      <div class="section-head reveal"><span>06 / QUICK BRIEF</span><h2>MAKE THE <em>FIRST MOVE.</em></h2></div>
       <form class="brief-form reveal" id="briefForm">
         <input id="name" required placeholder="YOUR NAME" aria-label="Your name">
         <select id="project" required aria-label="Project type"><option value="" disabled selected>PROJECT TYPE</option><option>Shorts / Reels</option><option>YouTube</option><option>Gaming</option><option>Anime Edit</option><option>Promo / Ad</option></select>
@@ -142,7 +164,7 @@
 
     <section id="contact" class="contact">
       <div class="contact-inner reveal">
-        <div class="contact-kicker"><i></i> HAVE A PROJECT?</div>
+        <div class="contact-kicker"><i></i> HAVE A PROJECT?</div><div class="contact-orbit">TRIVEX / V8 / OPEN FOR WORK</div>
         <h2>TURN YOUR<br><em>FOOTAGE INTO IMPACT.</em></h2>
         <p>Tell me what you're making, where you're posting it and what style you want. I'll take it from there.</p>
         <div class="contact-actions">
@@ -159,6 +181,6 @@
     <div class="video-shell"><iframe id="videoFrame" title="TRIVEX EDIT video preview" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
   </div>
   <button class="back-top" aria-label="Back to top">↑</button>
-  <footer><span>© <span data-year>2026</span> TRIVEX EDIT</span><span>EDIT / MOTION / STORY</span><span>V7 / CLIENT-FIRST</span><a href="#home">BACK TO TOP ↑</a></footer>
+  <footer><span>© <span data-year>2026</span> TRIVEX EDIT</span><span>EDIT / MOTION / STORY</span><span>V8 / PREMIUM EXPERIENCE</span><a href="#home">BACK TO TOP ↑</a></footer>
 </body>
 </html>
