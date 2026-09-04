@@ -26,3 +26,22 @@ function closeVideo(){modal.classList.remove('show');frame.src='';document.body.
 $$('[data-video]').forEach(card=>card.addEventListener('click',e=>{e.preventDefault();frame.src=`https://www.youtube-nocookie.com/embed/${card.dataset.video}?autoplay=1&rel=0`;modal.classList.add('show');document.body.classList.add('locked')}));
 $('.modal-close')?.addEventListener('click',closeVideo);modal?.addEventListener('click',e=>{if(e.target===modal)closeVideo()});addEventListener('keydown',e=>{if(e.key==='Escape')closeVideo()});
 $$('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
+
+
+// V7 interactions
+const cursor=$('.magnetic-cursor');
+if(cursor && matchMedia('(pointer:fine)').matches){
+  window.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';cursor.style.opacity='.8'});
+  $$('.btn,.nav-cta,.work-card,.service').forEach(el=>{
+    el.addEventListener('mouseenter',()=>cursor.style.transform='translate(-50%,-50%) scale(2.2)');
+    el.addEventListener('mouseleave',()=>cursor.style.transform='translate(-50%,-50%) scale(1)');
+  });
+}
+const brief=$('#briefForm');
+if(brief){brief.addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=$('#name').value.trim(), project=$('#project').value, platform=$('#platform').value.trim(), goal=$('#goal').value.trim();
+  const subject=encodeURIComponent('TRIVEX EDIT — New Project Brief');
+  const body=encodeURIComponent(`Hi TRIVEX EDIT,\n\nName: ${name}\nProject: ${project}\nPlatform: ${platform || 'Not specified'}\n\nProject details:\n${goal}`);
+  window.location.href=`mailto:shaurya121518@gmail.com?subject=${subject}&body=${body}`;
+});}
