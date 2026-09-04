@@ -1,21 +1,19 @@
-# TRIVEX EDIT — V5
+# TRIVEX EDIT — V6
 
-Premium responsive video-editor portfolio.
+Client-conversion + premium-animation portfolio.
 
-## V5 upgrades
-- Stronger hero section with availability badge
-- Refined premium black/red visual system
-- Improved project cards and hover interactions
-- Skills strip and expanded stats
-- Back-to-top button
-- Better mobile navigation accessibility
-- Smooth scroll, reveal animations and active navigation
+### V6 upgrades
+- Conversion-focused copy and CTA flow
+- Premium animated hero with rings and cursor glow
+- Stronger trust strip and proof points
+- Service cards designed around outcomes
+- Work section with prominent CTA
+- "Why TRIVEX" value section
+- Clear 4-step client process
+- Responsive mobile navigation
+- Scroll progress + reveal animations
 - YouTube preview modal
-- Existing V4 project links retained
-- GitHub Pages compatible; no build tools required
+- GitHub Pages ready
 
-## Deploy
-Upload the contents of this folder so `index.html` is at the repository/site root.
-
-## Before publishing
-Replace placeholder YouTube/Instagram/WhatsApp links with your exact profiles if needed.
+### Publish
+Upload the contents of this folder to the repository root. Keep `index.html` at the root.
