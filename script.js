@@ -1,3 +1,4 @@
+document.documentElement.classList.add('js');
 const $=(s,p=document)=>p.querySelector(s),$$=(s,p=document)=>[...p.querySelectorAll(s)];
 
 const revealObserver=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.1});
@@ -22,8 +23,8 @@ $('.hero-art')?.addEventListener('pointerleave',()=>{if(card)card.style.transfor
 $$('.work-card').forEach(el=>{el.addEventListener('pointermove',e=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform=`perspective(900px) rotateY(${x*4}deg) rotateX(${-y*4}deg) translateY(-4px)`});el.addEventListener('pointerleave',()=>el.style.transform='')});
 
 const modal=$('.video-modal'),frame=$('#videoFrame'),close=$('.modal-close');
-$$('[data-video]').forEach(card=>card.addEventListener('click',e=>{e.preventDefault();const id=card.dataset.video;if(!id)return;frame.src=`https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;modal.classList.add('open');document.body.classList.add('modal-open')}));
-function closeModal(){modal.classList.remove('open');frame.src='';document.body.classList.remove('modal-open')}
+$$('[data-video]').forEach(card=>card.addEventListener('click',e=>{e.preventDefault();const id=card.dataset.video;if(!id)return;frame.src=`https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;modal.classList.add('show');document.body.classList.add('locked')}));
+function closeModal(){modal.classList.remove('show');frame.src='';document.body.classList.remove('locked')}
 close?.addEventListener('click',closeModal);modal?.addEventListener('click',e=>{if(e.target===modal)closeModal()});addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
 $('.back-top')?.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));

@@ -1,24 +1,22 @@
-# TRIVEX EDIT — V7
+# TRIVEX EDIT — V8
 
-Client-conversion + premium-animation portfolio.
+Premium client-conversion video editor portfolio.
 
-### V7 upgrades
-- Conversion-focused copy and CTA flow
-- Premium animated hero with rings and cursor glow
-- Stronger trust strip and proof points
-- Service cards designed around outcomes
-- Work section with prominent CTA
-- "Why TRIVEX" value section
-- Clear 4-step client process
-- Responsive mobile navigation
-- Scroll progress + reveal animations
+### V8 upgrades
+- V7 foundation retained and polished
+- Premium hero card 3D interaction
+- Subtle work-card tilt interactions
+- Cursor spotlight / cinematic glow
+- Stronger CTA hover micro-interactions
+- New TRIVEX Method / About section anchor
+- Quick FAQ section for client objections
+- Project brief now opens a pre-filled email enquiry
+- Working WhatsApp enquiry link
+- Accessibility: reduced-motion support
+- Mobile-friendly responsive layout
 - YouTube preview modal
+- Scroll progress + reveal animations
 - GitHub Pages ready
-- Interactive project brief that opens a pre-filled email
-- Stronger proof/positioning sections
-- Client-first stats strip
-- Premium cursor interaction on desktop
-- Mobile-first responsive brief form
 
-### Publish
-Upload the contents of this folder to the repository root. Keep `index.html` at the root.
+### Deploy
+Upload the contents of this folder to your GitHub Pages repository, keeping `index.html`, `style.css`, and `script.js` in the same directory.
