@@ -4,59 +4,30 @@ const revealObserver=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersec
 $$('.reveal').forEach((el,i)=>{el.style.transitionDelay=`${Math.min(i%4,3)*70}ms`;revealObserver.observe(el)});
 
 const menu=$('.menu'),nav=$('nav');
-menu?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open);menu.textContent=open?'×':'☰'});
-$$('nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.textContent='☰'}));
+menu?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open)});
+$$('nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 
-const progress=$('.scroll-progress'),back=$('.back-top'),sections=$$('main section[id]'),links=$$('nav a');
-function scrollUI(){
- const max=document.documentElement.scrollHeight-innerHeight;
- if(progress)progress.style.width=`${max>0?scrollY/max*100:0}%`;
- let current='home';sections.forEach(s=>{if(scrollY>=s.offsetTop-180)current=s.id});
- links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===`#${current}`));
- back?.classList.toggle('show',scrollY>700);
-}
-addEventListener('scroll',scrollUI,{passive:true});scrollUI();
-back?.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+const progress=$('.scroll-progress');
+addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;progress.style.width=(h>0?(scrollY/h)*100:0)+'%'},{passive:true});
 
 const glow=$('.cursor-glow');
-if(matchMedia('(pointer:fine)').matches){addEventListener('pointermove',e=>{glow.style.opacity='1';glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});addEventListener('pointerleave',()=>glow.style.opacity='0')}
+addEventListener('pointermove',e=>{if(glow){glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'}});
 
-const modal=$('.video-modal'),frame=$('#videoFrame');
-function closeVideo(){modal.classList.remove('show');frame.src='';document.body.classList.remove('locked')}
-$$('[data-video]').forEach(card=>card.addEventListener('click',e=>{e.preventDefault();frame.src=`https://www.youtube-nocookie.com/embed/${card.dataset.video}?autoplay=1&rel=0`;modal.classList.add('show');document.body.classList.add('locked')}));
-$('.modal-close')?.addEventListener('click',closeVideo);modal?.addEventListener('click',e=>{if(e.target===modal)closeVideo()});addEventListener('keydown',e=>{if(e.key==='Escape')closeVideo()});
-$$('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
+// Subtle 3D interaction for the hero card.
+const card=$('.edit-card');
+$('.hero-art')?.addEventListener('pointermove',e=>{if(!card||matchMedia('(prefers-reduced-motion: reduce)').matches)return;const r=e.currentTarget.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`rotateY(${x*7}deg) rotateX(${-y*7}deg) translateZ(8px)`});
+$('.hero-art')?.addEventListener('pointerleave',()=>{if(card)card.style.transform=''});
 
+// Lightweight tilt for work cards.
+$$('.work-card').forEach(el=>{el.addEventListener('pointermove',e=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform=`perspective(900px) rotateY(${x*4}deg) rotateX(${-y*4}deg) translateY(-4px)`});el.addEventListener('pointerleave',()=>el.style.transform='')});
 
-// V7 interactions
-const cursor=$('.magnetic-cursor');
-if(cursor && matchMedia('(pointer:fine)').matches){
-  window.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';cursor.style.opacity='.8'});
-  $$('.btn,.nav-cta,.work-card,.service').forEach(el=>{
-    el.addEventListener('mouseenter',()=>cursor.style.transform='translate(-50%,-50%) scale(2.2)');
-    el.addEventListener('mouseleave',()=>cursor.style.transform='translate(-50%,-50%) scale(1)');
-  });
-}
-const brief=$('#briefForm');
-if(brief){brief.addEventListener('submit',e=>{
-  e.preventDefault();
-  const name=$('#name').value.trim(), project=$('#project').value, platform=$('#platform').value.trim(), goal=$('#goal').value.trim();
-  const subject=encodeURIComponent('TRIVEX EDIT — New Project Brief');
-  const body=encodeURIComponent(`Hi TRIVEX EDIT,\n\nName: ${name}\nProject: ${project}\nPlatform: ${platform || 'Not specified'}\n\nProject details:\n${goal}`);
-  window.location.href=`mailto:shaurya121518@gmail.com?subject=${subject}&body=${body}`;
-});}
+const modal=$('.video-modal'),frame=$('#videoFrame'),close=$('.modal-close');
+$$('[data-video]').forEach(card=>card.addEventListener('click',e=>{e.preventDefault();const id=card.dataset.video;if(!id)return;frame.src=`https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;modal.classList.add('open');document.body.classList.add('modal-open')}));
+function closeModal(){modal.classList.remove('open');frame.src='';document.body.classList.remove('modal-open')}
+close?.addEventListener('click',closeModal);modal?.addEventListener('click',e=>{if(e.target===modal)closeModal()});addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
-// V8 premium interactions
-addEventListener('load',()=>setTimeout(()=>$('.preloader')?.classList.add('done'),650));
-const fine=matchMedia('(pointer:fine)').matches;
-if(fine){
-  const magneticEls=$$('.magnetic');
-  magneticEls.forEach(el=>{
-    el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();const x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;el.style.transform=`translate(${x*.12}px,${y*.12}px)`});
-    el.addEventListener('mouseleave',()=>el.style.transform='');
-  });
-}
-// Active section highlight and smoother mobile menu state
-$$('nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
-// Subtle 3D tilt on the timeline card
-if(fine){const card=$('.timeline-card');card?.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();const rx=((e.clientY-r.top)/r.height-.5)*-4,ry=((e.clientX-r.left)/r.width-.5)*4;card.style.transform=`perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`});card?.addEventListener('mouseleave',()=>card.style.transform='')}
+$('.back-top')?.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+
+document.querySelector('#briefForm')?.addEventListener('submit',e=>{e.preventDefault();const name=$('#name').value.trim(),project=$('#project').value,platform=$('#platform').value.trim()||'Not specified',goal=$('#goal').value.trim();const subject=encodeURIComponent(`TRIVEX EDIT Project Brief — ${project}`);const body=encodeURIComponent(`Hi TRIVEX EDIT,\n\nName: ${name}\nProject: ${project}\nPlatform: ${platform}\nDetails: ${goal}\n\nI'd like to discuss this project.`);location.href=`mailto:shaurya121518@gmail.com?subject=${subject}&body=${body}`});
+
+document.querySelector('[data-year]')?.replaceChildren(new Date().getFullYear());
