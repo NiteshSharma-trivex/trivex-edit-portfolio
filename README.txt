@@ -1,27 +1,17 @@
-TRIVEX EDIT PORTFOLIO — V8.5
+TRIVEX EDIT — V8.5.1 EASY VIDEO MANAGER
 
-WHAT'S NEW
-- Premium dark/cinematic TRIVEX EDIT design.
-- Responsive mobile + desktop layout.
-- Animated reveal effects and hero visuals.
-- Services, About, Skills, Work and Contact sections.
-- Work category filters.
-- NEW: built-in Portfolio Manager (gear button at bottom-right).
-- Add/delete projects directly from the website; no videos.js file required.
-- Projects are stored in browser localStorage.
-- GitHub Pages compatible — no build step required.
+Add projects from the ⚙ Portfolio Manager without editing JavaScript.
 
-HOW TO ADD A VIDEO
-1. Open index.html.
-2. Click the gear button (⚙) at bottom-right.
-3. Enter title, category and video/YouTube URL.
-4. Optionally add a thumbnail URL.
-5. Click ADD PROJECT.
+1. Open the site.
+2. Tap ⚙ at the bottom-right.
+3. Enter title, category and your YouTube/Vimeo/direct video URL.
+4. YouTube thumbnails are automatic when possible.
+5. Tap ADD PROJECT.
 
-IMPORTANT
-The Portfolio Manager saves projects in the browser used to add them. For a public GitHub Pages site, a future V8.6 can add a simple cloud/database admin system so every visitor sees the same updated portfolio.
+For the public GitHub Pages site:
+1. Add/delete projects in the manager.
+2. Tap EXPORT PROJECTS.
+3. Replace projects.json in your GitHub repository with the exported file.
+4. Refresh the live website.
 
-CONTACT PLACEHOLDERS
-- Email: hello@trivexedit.com
-- WhatsApp: +91 00000 00000
-Replace these in index.html with your real details before publishing.
+Important: because GitHub Pages is a static site, browser uploads are saved only in that browser. The actual video should be hosted on YouTube/Vimeo/another public host; paste its URL into the manager.

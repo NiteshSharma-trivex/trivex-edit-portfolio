@@ -56,7 +56,28 @@
   <footer><div class="footer-brand"><span class="brand-mark">▶</span><b>TRIVEX</b> EDIT</div><p>© 2026 TRIVEX EDIT. Crafted for visual storytelling.</p><a href="#home">BACK TO TOP ↑</a></footer>
 
   <button class="admin-trigger" id="adminTrigger" title="Portfolio Manager">⚙</button>
-  <div class="modal" id="adminModal"><div class="modal-card"><button class="close" id="closeModal">×</button><div class="section-label">PORTFOLIO MANAGER</div><h2>ADD A <em>NEW EDIT</em></h2><p class="modal-note">Add projects from the website itself. They are saved in this browser — no videos.js editing required.</p><form id="projectForm"><label>Project title<input id="pTitle" required placeholder="e.g. Cinematic Anime Edit"></label><label>Category<select id="pCategory"><option value="shorts">Shorts</option><option value="youtube">YouTube</option><option value="gaming">Gaming</option><option value="anime">Anime</option></select></label><label>Video / YouTube URL<input id="pUrl" required placeholder="https://..."></label><label>Thumbnail URL <span>(optional)</span><input id="pThumb" placeholder="https://...jpg or image URL"></label><label>Description<textarea id="pDesc" rows="3" placeholder="Short description"></textarea></label><div class="form-actions"><button class="btn primary" type="submit">ADD PROJECT +</button><button class="btn ghost" type="button" id="resetProjects">RESET DEMO PROJECTS</button></div></form><div class="manager-list" id="managerList"></div></div></div>
+  <div class="modal" id="adminModal"><div class="modal-card">
+    <button class="close" id="closeModal">×</button>
+    <div class="section-label">PORTFOLIO MANAGER</div>
+    <h2>ADD A <em>NEW EDIT</em></h2>
+    <p class="modal-note">Add an edit without touching JavaScript. For a public GitHub Pages update, export your projects and replace <b>projects.json</b> in your repository.</p>
+    <form id="projectForm">
+      <label>Project title<input id="pTitle" required placeholder="e.g. Cinematic Anime Edit"></label>
+      <label>Category<select id="pCategory"><option value="shorts">Shorts</option><option value="youtube">YouTube</option><option value="gaming">Gaming</option><option value="anime">Anime</option></select></label>
+      <label>Video / YouTube URL<input id="pUrl" required type="url" placeholder="Paste YouTube, Vimeo or direct video URL"></label>
+      <label>Thumbnail URL <span>(optional — YouTube thumbnails are automatic)</span><input id="pThumb" type="url" placeholder="https://...jpg"></label>
+      <label>Description<textarea id="pDesc" rows="3" placeholder="Short description"></textarea></label>
+      <div class="form-actions">
+        <button class="btn primary" type="submit">ADD PROJECT +</button>
+        <button class="btn ghost" type="button" id="exportProjects">EXPORT PROJECTS ↓</button>
+        <button class="btn ghost" type="button" id="importProjects">IMPORT PROJECTS ↑</button>
+        <input id="projectFile" type="file" accept=".json,application/json" hidden>
+        <button class="btn ghost" type="button" id="resetProjects">RESET DEMO</button>
+      </div>
+    </form>
+    <div class="manager-tip"><b>HOW IT WORKS</b><span>1. Add your edit → 2. Export Projects → 3. Replace <code>projects.json</code> on GitHub Pages.</span></div>
+    <div class="manager-list" id="managerList"></div>
+  </div></div>
   <div class="toast" id="toast"></div>
   <script src="script.js"></script>
 </body>
