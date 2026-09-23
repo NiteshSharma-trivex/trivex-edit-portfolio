@@ -1,50 +1,50 @@
 [
   {
-    "id": "d1",
-    "title": "Cinematic Anime Edit",
-    "category": "anime",
-    "url": "https://www.youtube.com/",
-    "thumb": "",
-    "desc": "Music-driven anime edit with dramatic pacing and typography."
-  },
-  {
-    "id": "d2",
-    "title": "Gaming Highlight Reel",
-    "category": "gaming",
-    "url": "https://www.youtube.com/",
-    "thumb": "",
-    "desc": "Fast cuts, impact transitions and sound design for gameplay."
-  },
-  {
-    "id": "d3",
-    "title": "Creator Short — Episode 01",
+    "id": "yt1",
+    "title": "Short Form Edit 01",
     "category": "shorts",
-    "url": "https://www.youtube.com/",
+    "url": "https://youtube.com/shorts/yWbdWXj33sw",
     "thumb": "",
-    "desc": "Hook-first short-form edit designed for retention."
+    "desc": "Short-form video edit with engaging pacing, clean cuts and dynamic visuals."
   },
   {
-    "id": "d4",
-    "title": "YouTube Story Edit",
-    "category": "youtube",
-    "url": "https://www.youtube.com/",
-    "thumb": "",
-    "desc": "Long-form creator edit with clean storytelling and rhythm."
-  },
-  {
-    "id": "d5",
-    "title": "Neon Motion Sequence",
+    "id": "yt2",
+    "title": "Short Form Edit 02",
     "category": "shorts",
-    "url": "https://www.youtube.com/",
+    "url": "https://youtube.com/shorts/sLVp9kb-Jis",
     "thumb": "",
-    "desc": "Motion graphics, kinetic text and energetic transitions."
+    "desc": "Creator-focused short edit with fast pacing and polished visual flow."
   },
   {
-    "id": "d6",
-    "title": "Anime Motivation",
-    "category": "anime",
-    "url": "https://www.youtube.com/",
+    "id": "yt3",
+    "title": "Short Form Edit 03",
+    "category": "shorts",
+    "url": "https://youtube.com/shorts/sqA6VkaAQdg",
     "thumb": "",
-    "desc": "Emotional visual edit combining music, quotes and atmosphere."
+    "desc": "Engaging short-form edit designed for strong visual impact and retention."
+  },
+  {
+    "id": "yt4",
+    "title": "Short Form Edit 04",
+    "category": "shorts",
+    "url": "https://youtube.com/shorts/6czaTgmqkWM",
+    "thumb": "",
+    "desc": "Dynamic short edit featuring clean transitions, timing and visual rhythm."
+  },
+  {
+    "id": "yt5",
+    "title": "Short Form Edit 05",
+    "category": "shorts",
+    "url": "https://youtube.com/shorts/Yt-As7T-Rj8",
+    "thumb": "",
+    "desc": "Polished short-form edit showcasing creative pacing and storytelling."
+  },
+  {
+    "id": "yt6",
+    "title": "Short Form Edit 06",
+    "category": "shorts",
+    "url": "https://youtube.com/shorts/L-LZbGc0KT8",
+    "thumb": "",
+    "desc": "Polished short-form edit showcasing creative pacing and visual storytelling."
   }
 ]
